@@ -1,5 +1,4 @@
-// config/authErrors.js
-// Converts Firebase's raw error codes into messages you can show users.
+
 
 export function getAuthErrorMessage(error) {
   const code = error?.code || "";
