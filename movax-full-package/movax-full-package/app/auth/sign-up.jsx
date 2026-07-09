@@ -46,8 +46,7 @@ export default function SignUp() {
     try {
       setLoading(true);
       await signUp(name, email.trim(), password);
-      // AuthProvider's onAuthStateChanged + root layout redirect
-      // will automatically navigate into the app.
+
     } catch (err) {
       setError(getAuthErrorMessage(err));
     } finally {
