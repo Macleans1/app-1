@@ -29,8 +29,7 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  // Get these from Google Cloud Console -> APIs & Services -> Credentials.
-  // You need a separate OAuth client ID per platform.
+ 
   const [request, response, promptAsync] = Google.useAuthRequest({
     expoClientId: "YOUR_EXPO_CLIENT_ID.apps.googleusercontent.com",
     iosClientId: "YOUR_IOS_CLIENT_ID.apps.googleusercontent.com",
@@ -66,7 +65,7 @@ export default function SignIn() {
     try {
       setLoading(true);
       await signIn(email.trim(), password);
-      // Root layout redirect handles navigation into the app.
+     
     } catch (err) {
       setError(getAuthErrorMessage(err));
     } finally {
