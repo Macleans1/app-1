@@ -1,7 +1,3 @@
-// contexts/AuthContext.js
-//
-// Wraps your app (in app/_layout.jsx) so any screen can call
-// useAuth() to get { user, loading, signUp, signIn, logout }.
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import {
@@ -23,7 +19,7 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fires whenever auth state changes (login, logout, app restart)
+   
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setUser(firebaseUser);
       setLoading(false);
@@ -52,7 +48,7 @@ export function AuthProvider({ children }) {
     await sendPasswordResetEmail(auth, email);
   };
 
-  // idToken comes from expo-auth-session's Google provider (see sign-in.jsx)
+ 
   const signInWithGoogle = async (idToken) => {
     const credential = GoogleAuthProvider.credential(idToken);
     const result = await signInWithCredential(auth, credential);
