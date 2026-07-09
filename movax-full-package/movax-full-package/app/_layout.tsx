@@ -24,10 +24,10 @@ function RootNavigation() {
     const inAuthGroup = segments[0] === 'auth';
 
     if (!user && !inAuthGroup) {
-      // Not logged in, and not already on an auth screen -> send to sign-in
+     
       router.replace('/auth/sign-in');
     } else if (user && inAuthGroup) {
-      // Logged in but sitting on an auth screen -> send into the app
+    
       router.replace('/(tabs)');
     }
   }, [user, loading, segments]);
