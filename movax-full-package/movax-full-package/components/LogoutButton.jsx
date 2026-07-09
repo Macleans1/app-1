@@ -1,8 +1,3 @@
-// components/LogoutButton.jsx
-//
-// Drop this into your Profile/Settings screen, e.g.:
-//   import LogoutButton from "../../components/LogoutButton";
-//   <LogoutButton />
 
 import { TouchableOpacity, Text, StyleSheet, Alert } from "react-native";
 import { useAuth } from "../contexts/AuthContext";
@@ -19,7 +14,7 @@ export default function LogoutButton() {
         onPress: async () => {
           try {
             await logout();
-            // Root layout's redirect effect sends the user to /auth/sign-in
+           
           } catch (err) {
             Alert.alert("Error", "Could not log out. Please try again.");
           }
